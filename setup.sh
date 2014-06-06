@@ -89,5 +89,8 @@ brew cask install skype
 
 # Install Chrome
 brew cask install google-chrome
-# Install Homesick. Dotfiles manager. 
-#gem install homesick
+
+# Install dotfiles
+git clone https://github.com/johnlim/dotfiles.git ~/git/dotfiles
+chmod +x ~/git/dotfiles/setup.sh
+~/git/dotfiles/setup.sh
