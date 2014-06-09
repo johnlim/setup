@@ -76,6 +76,8 @@ brew cask install skype
 brew cask install google-chrome
 
 # Install dotfiles
-git clone https://github.com/johnlim/dotfiles.git ~/git/dotfiles
-chmod +x ~/git/dotfiles/setup.sh
-~/git/dotfiles/setup.sh
+DOTFILES_REMOTE='https://github.com/johnlim/dotfiles.git' 
+DOTFILES_LOCAL=~/git/dotfiles
+git clone $DOTFILES_REMOTE $DOTFILES_LOCAL 
+chmod +x $DOTFILES_LOCAL/setup.sh
+$DOTFILES_LOCAL/setup.sh
