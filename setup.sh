@@ -46,23 +46,8 @@ echo Tapping caskroom/cask...
 brew tap caskroom/cask
 brew install brew-cask
 
-# install JDK 1.7.0_51 for Grails and IntelliJ compatibality reasons
-brew cask list | grep java7 
-RETSTATUS=$?
-if [ $RETSTATUS -ne 0 ]
-then
-  echo Tapping caskroom/versions...
-  brew tap caskroom/versions
-  cd "$(brew --repository)"/Library/Taps/caskroom/homebrew-versions
-  git checkout c33b05890073200829b33859f0a5ab325f34f370
-  brew cask install java7
-  git checkout master
-else
-  tput setaf 1 && tput smul
-  echo Warning:
-  tput sgr0
-  echo java7 already installed.
-fi
+# install JDK 1.6x for IntelliJ compatibality reasons
+brew cask install java6
 
 # Install IntelliJ Ulitmate
 brew cask install intellij-idea
