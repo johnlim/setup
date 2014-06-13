@@ -41,6 +41,9 @@ brew install grails
 # Install Gradle
 brew install gradle
 
+# Install wget
+brew install wget
+
 # Install Homebrew-cask. A CLI workflow for the adminisration of Mac applications distributed as binaries http://caskroom.io
 echo Tapping caskroom/cask...
 brew tap caskroom/cask
