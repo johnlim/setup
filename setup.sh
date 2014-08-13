@@ -45,6 +45,11 @@ brew install gradle
 # Install wget
 brew install wget
 
+#install nodeJs, bower and grunt-cli
+brew install node
+npm install -g bower
+npm install -g grunt-cli
+
 # Install Homebrew-cask. A CLI workflow for the adminisration of Mac applications distributed as binaries http://caskroom.io
 echo Tapping caskroom/cask...
 brew tap caskroom/cask
