@@ -25,6 +25,7 @@ then
   brew install kdiff3
   git config --global diff.tool kdiff3 
   git config --global merge.tool kdiff3
+  git config --global core.editor "/usr/bin/vim"
 else
   tput setaf 1 && tput smul
   echo Warning:
