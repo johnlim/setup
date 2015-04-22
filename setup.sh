@@ -5,7 +5,7 @@ which brew
 RETSTATUS=$?
 if [ $RETSTATUS -ne 0 ]
 then
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew update
 else
   tput setaf 1 && tput smul
