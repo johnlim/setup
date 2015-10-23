@@ -68,7 +68,7 @@ brew tap caskroom/cask
 brew install brew-cask
 
 # install JDK 1.6x for IntelliJ compatibality reasons
-brew cask install java6
+brew cask install java7
 
 # Install IntelliJ Ulitmate
 brew cask install intellij-idea
