@@ -33,14 +33,14 @@ else
   echo kdiff3 already installed.
 fi
 
-# Install groovy
-brew install groovy
+# Install SDKMAN
+curl -s http://get.sdkman.io | bash
+export SDKMAN_DIR="/Users/$USER/.sdkman" && source "/Users/$USER/.sdkman/bin/sdkman-init.sh"
 
-# Install Grails
-brew install grails
-
-# Install Gradle
-brew install gradle
+# Install G* tools
+sdk install groovy
+sdk install grails
+sdk install gradle
 
 # Install wget
 brew install wget
