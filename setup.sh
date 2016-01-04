@@ -33,6 +33,9 @@ else
   echo kdiff3 already installed.
 fi
 
+#Install Vim
+brew install vim
+
 # Install SDKMAN
 curl -s http://get.sdkman.io | bash
 export SDKMAN_DIR="/Users/$USER/.sdkman" && source "/Users/$USER/.sdkman/bin/sdkman-init.sh"
@@ -44,6 +47,9 @@ sdk install gradle
 
 # Install wget
 brew install wget
+
+# Install python (comes with Setuptools and pip)
+brew install python 
 
 #install nodeJs, bower, grunt-cli and browserify
 brew install node
