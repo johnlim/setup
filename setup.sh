@@ -37,8 +37,8 @@ fi
 brew install vim
 
 # Install SDKMAN
-curl -s http://get.sdkman.io | bash
-export SDKMAN_DIR="/Users/$USER/.sdkman" && source "/Users/$USER/.sdkman/bin/sdkman-init.sh"
+curl -s get.sdkman.io | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Install G* tools
 sdk install groovy
