@@ -51,11 +51,12 @@ brew install wget
 # Install python (comes with Setuptools and pip)
 brew install python 
 
-#install nodeJs, bower, grunt-cli and browserify
+#install nodeJs, bower, grunt-cli, browserify and gulp
 brew install node
 npm install -g bower
 npm install -g grunt-cli
 npm install -g browserify
+npm install -g gulp
 
 #install automake
 brew install automake
