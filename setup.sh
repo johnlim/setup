@@ -14,6 +14,9 @@ else
   echo Homebrew already installed.
 fi
 
+#Install Vim
+brew install vim
+
 # Install Git
 brew install git #Homebrew will show warning message if already installed.
 
@@ -25,16 +28,13 @@ then
   brew install kdiff3
   git config --global diff.tool kdiff3 
   git config --global merge.tool kdiff3
-  git config --global core.editor "/usr/bin/vim"
+  git config --global core.editor "/usr/local/bin/vim"
 else
   tput setaf 1 && tput smul
   echo Warning:
   tput sgr0
   echo kdiff3 already installed.
-fi
-
-#Install Vim
-brew install vim
+fi 
 
 # Install SDKMAN
 curl -s get.sdkman.io | bash
