@@ -37,14 +37,15 @@ else
       echo "${red}${cask}${reset} is ${green}up-to-date${reset}."
     fi
   done
-  fi
+fi
+
+#Homebrew will show warning message if already installed.
 
 #Install Vim
 brew install vim
 
 # Install Git
-brew install git #Homebrew will show warning message if already installed.
-
+brew install git 
 # Install kdiff3 & set it as the default external  diff/merge too for git
 brew list | grep kdiff3
 RETSTATUS=$?
@@ -62,8 +63,11 @@ else
 fi 
 
 # Install SDKMAN
+touch $HOME/.bash_profile
 curl -s get.sdkman.io | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+sdk install java
 
 # Install G* tools
 sdk install groovy
@@ -97,10 +101,7 @@ gem install compass
 # Install Homebrew-cask. A CLI workflow for the adminisration of Mac applications distributed as binaries http://caskroom.io
 echo Tapping caskroom/cask...
 brew tap caskroom/cask
-brew install brew-cask
-
-# install JDK 1.6x for IntelliJ compatibality reasons
-brew cask install java7
+brew install brew-cask 
 
 # Install IntelliJ Ulitmate
 brew cask install intellij-idea
