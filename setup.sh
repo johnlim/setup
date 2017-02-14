@@ -39,8 +39,7 @@ else
   done
 fi
 
-#Homebrew will show warning message if already installed.
-
+#Homebrew will show warning message if already installed.  
 #Install Vim
 brew install vim
 
@@ -80,8 +79,10 @@ brew install wget
 # Install python (comes with Setuptools and pip)
 brew install python 
 
-#install nodeJs, bower, grunt-cli, browserify and gulp
-brew install node
+#install NVM (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+
+#install bower, grunt-cli, browserify and gulp 
 npm install -g bower
 npm install -g grunt-cli
 npm install -g browserify
@@ -112,10 +113,7 @@ RETSTATUS=$?
 if [ $RETSTATUS -ne 0 ]
 then
   brew cask install alfred 
-  # Run "brew cask alfred link" after starting Alfred to enable Alfred to search Caskroom
-  open -a ~/Applications/Alfred\ 2.app
-  sleep 5
-  brew cask alfred link
+  brew cask alfred 
 else
   brew cask install alfred #use brew casks' warning message
 fi
