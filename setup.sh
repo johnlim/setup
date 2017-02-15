@@ -9,12 +9,15 @@ $DOTFILES_LOCAL/setup.sh
 #install NVM (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 source $HOME/.bash_profile
+nvm install node
 
 #install bower, grunt-cli, browserify and gulp 
 npm install -g bower
 npm install -g grunt-cli
 npm install -g browserify
-npm install -g gulp
+npm rm -g gulp
+npm i -g gulp-cli
+npm install -g polymer-cli
 
 # Install  Homebrew. Homebrew  is the equivalent of apt-get for linux. Its required to install tools such as git and wget.
 # Mac OS 10.9 will automatically prompt user to install XCode command line tools which is a pre-requisite.
