@@ -1,4 +1,21 @@
 #!/bin/bash
+# Install dotfiles
+DOTFILES_REMOTE='https://github.com/johnlim/dotfiles.git' 
+DOTFILES_LOCAL=~/git/dotfiles
+git clone $DOTFILES_REMOTE $DOTFILES_LOCAL 
+chmod +x $DOTFILES_LOCAL/setup.sh
+$DOTFILES_LOCAL/setup.sh
+
+#install NVM (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+source $HOME/.bash_profile
+
+#install bower, grunt-cli, browserify and gulp 
+npm install -g bower
+npm install -g grunt-cli
+npm install -g browserify
+npm install -g gulp
+
 # Install  Homebrew. Homebrew  is the equivalent of apt-get for linux. Its required to install tools such as git and wget.
 # Mac OS 10.9 will automatically prompt user to install XCode command line tools which is a pre-requisite.
 which brew 
@@ -44,14 +61,15 @@ fi
 brew install vim
 
 # Install Git
-brew install git 
+brew install git
+
 # Install kdiff3 & set it as the default external  diff/merge too for git
 brew list | grep kdiff3
 RETSTATUS=$?
 if [ $RETSTATUS -ne 0 ]
 then
   brew install kdiff3
-  git config --global diff.tool kdiff3 
+  git config --global diff.tool kdiff3
   git config --global merge.tool kdiff3
   git config --global core.editor "/usr/local/bin/vim"
 else
@@ -59,10 +77,9 @@ else
   echo Warning:
   tput sgr0
   echo kdiff3 already installed.
-fi 
+fi
 
 # Install SDKMAN
-touch $HOME/.bash_profile
 curl -s get.sdkman.io | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
@@ -78,15 +95,6 @@ brew install wget
 
 # Install python (comes with Setuptools and pip)
 brew install python 
-
-#install NVM (Node Version Manager)
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
-
-#install bower, grunt-cli, browserify and gulp 
-npm install -g bower
-npm install -g grunt-cli
-npm install -g browserify
-npm install -g gulp
 
 #install automake
 brew install automake
@@ -127,9 +135,3 @@ brew cask install skype
 # Install Chrome
 brew cask install google-chrome
 
-# Install dotfiles
-DOTFILES_REMOTE='https://github.com/johnlim/dotfiles.git' 
-DOTFILES_LOCAL=~/git/dotfiles
-git clone $DOTFILES_REMOTE $DOTFILES_LOCAL 
-chmod +x $DOTFILES_LOCAL/setup.sh
-$DOTFILES_LOCAL/setup.sh
