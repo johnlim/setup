@@ -68,7 +68,7 @@ brew list | grep kdiff3
 RETSTATUS=$?
 if [ $RETSTATUS -ne 0 ]
 then
-  brew install kdiff3
+  brew install Caskroom/cask/kdiff3
   git config --global diff.tool kdiff3
   git config --global merge.tool kdiff3
   git config --global core.editor "/usr/local/bin/vim"
