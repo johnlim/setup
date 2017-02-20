@@ -19,6 +19,7 @@ npm rm -g gulp
 npm i -g gulp-cli
 npm install -g polymer-cli
 npm install -g web-component-tester
+npm install -g wt-cli 
 
 # Install  Homebrew. Homebrew  is the equivalent of apt-get for linux. Its required to install tools such as git and wget.
 # Mac OS 10.9 will automatically prompt user to install XCode command line tools which is a pre-requisite.
