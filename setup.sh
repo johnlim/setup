@@ -21,6 +21,7 @@ brew install vim
 
 # Install Git
 brew install git
+git config --global pull.rebase true
 
 # Install kdiff3 & set it as the default external  diff/merge too for git
 brew list | grep kdiff3
