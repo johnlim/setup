@@ -69,6 +69,9 @@ brew cask install skype
 # Install Chrome
 brew cask install google-chrome
 
+# Install Chrome
+brew cask install spectacle 
+
 # Install dotfiles
 DOTFILES_REMOTE='https://github.com/johnlim/dotfiles.git' 
 DOTFILES_LOCAL=~/git/dotfiles
