@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+echo $BASH_VERSION
+
 # Install  Homebrew. Homebrew  is the equivalent of apt-get for linux. Its required to install tools such as git and wget.
 # Mac OS 10.9 will automatically prompt user to install XCode command line tools which is a pre-requisite.
 which brew 
@@ -22,6 +24,29 @@ brew install vim
 # Install Git
 brew install git
 git config --global pull.rebase true
+
+# Install latest Bash so that we get programmable compeltions
+brew list | grep bash
+RETSTATUS=$?
+if [ $RETSTATUS -ne 0 ]
+then
+  brew install bash
+  echo "Whitelisting new bash shell..."
+  echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
+  chsh -s /usr/local/bin/bash
+  echo "Make it default for root user"
+  sudo chsh -s /usr/local/bin/bash
+else
+  tput setaf 1 && tput smul
+  echo Warning:
+  tput sgr0
+  echo bash already installed.
+fi
+
+# Install bash completions
+brew install bash-completion@2
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > /usr/local/etc/bash_completion.d/git-completion.bash
+
 
 # Install kdiff3 & set it as the default external  diff/merge too for git
 brew list | grep kdiff3
