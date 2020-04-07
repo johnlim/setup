@@ -79,6 +79,9 @@ brew install wget
 # Install python (comes with Setuptools and pip)
 brew install python 
 
+# Install mkcert for securing local dev
+brew install mkcert
+
 # Install IntelliJ Ulitmate
 brew cask install intellij-idea
 
@@ -88,8 +91,8 @@ brew cask install alfred
 # Install SequelPro
 brew cask install sequel-pro
 
-# Install Skype
-brew cask install skype
+# Install Zoom.us
+brew cask install zoomus
 
 # Install Chrome
 brew cask install google-chrome
@@ -99,6 +102,9 @@ brew cask install spectacle
 
 # Install postman
 brew cask install postman
+
+# Install postman
+brew cask install reflector
 
 # Install dotfiles
 DOTFILES_REMOTE='https://github.com/johnlim/dotfiles.git' 
@@ -112,3 +118,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 source $HOME/.bash_profile
 nvm install node
 
+#increase key repeat rate
+defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+defaults write NSGlobalDomain KeyRepeat -int 1
