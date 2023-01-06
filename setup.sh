@@ -53,7 +53,7 @@ brew list | grep kdiff3
 RETSTATUS=$?
 if [ $RETSTATUS -ne 0 ]
 then
-  brew cask install kdiff3
+  brew install --cask kdiff3
   git config --global diff.tool kdiff3
   git config --global merge.tool kdiff3
   git config --global core.editor "/usr/local/bin/vim"
@@ -83,28 +83,26 @@ brew install python
 brew install mkcert
 
 # Install IntelliJ Ulitmate
-brew cask install intellij-idea
+brew install --cask intellij-idea
 
-# Install Alfred
-brew cask install alfred 
+# Install Raycast 
+brew install --cask raycast
 
-# Install SequelPro
-brew cask install sequel-pro
 
 # Install Zoom.us
-brew cask install zoomus
+#brew install --cask zoomus
 
 # Install Chrome
-brew cask install google-chrome
-
-# Install Chrome
-brew cask install spectacle 
+brew install --cask google-chrome
 
 # Install postman
-brew cask install postman
+brew install --cask postman
 
-# Install postman
-brew cask install reflector
+# Install reflector 
+brew install --cask reflector
+
+# Install github command line tool 
+brew install gh
 
 # Install dotfiles
 DOTFILES_REMOTE='https://github.com/johnlim/dotfiles.git' 
