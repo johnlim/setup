@@ -8,8 +8,8 @@ RETSTATUS=$?
 if [ $RETSTATUS -ne 0 ]
 then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo >> /Users/jlim/.zprofile
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/jlim/.zprofile
+  echo >> ~/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
 else
   tput setaf 1 && tput smul
@@ -55,17 +55,23 @@ brew install --cask reflector
 # Install github command line tool 
 brew install gh
 
+# Install 1password 
+brew install --cask 1password
+
+# Install slack
+brew install --cask slack
+
 # Install node version manager 
 
-if ! brew info nvm &>/dev/null; then
+
+if [ -s "$(brew --prefix nvm)/nvm.sh" ]; then
+  echo "NVM is already installed via Homebrew."
+else
   #: Do something because cask is not installed
   brew install nvm
   export NVM_DIR="$HOME/.nvm"
   echo '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"' >> ~/.zprofile # This loads nvm
   echo '[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"' >> ~/.zprofile  # This loads nvm bash_completion 
-else
-  #: Do something when cask is installed
-  echo 'NVM already installed'
 fi
 
 # Install dotfiles
@@ -82,5 +88,5 @@ nvm install node
 
 #increase key repeat rate
 defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+defaults write -g KeyRepeat -int 0 # normal minimum is 2 (30 ms)
 defaults write NSGlobalDomain KeyRepeat -int 1
