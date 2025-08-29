@@ -61,6 +61,9 @@ brew install --cask 1password
 # Install slack
 brew install --cask slack
 
+# Install Visual Studio Code
+brew install --cask visual-studio-code
+
 # Install node version manager 
 
 
