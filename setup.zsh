@@ -64,9 +64,10 @@ brew install --cask slack
 # Install Visual Studio Code
 brew install --cask visual-studio-code
 
+# Install Claude Desktop
+brew install --cask claude
+
 # Install node version manager 
-
-
 if [ -s "$(brew --prefix nvm)/nvm.sh" ]; then
   echo "NVM is already installed via Homebrew."
 else
